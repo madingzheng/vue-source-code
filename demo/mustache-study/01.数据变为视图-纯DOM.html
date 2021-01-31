@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="list"></ul>
+  <script>
+    let arr = [
+      {name: '小明', age: 12, sex: '男'},
+      {name: '小红', age: 13, sex: '女'},
+      {name: '小强', age: 14, sex: '男'}
+    ]
+
+    const list = document.getElementById("list")
+
+    arr.forEach(item => {
+      const oLi = document.createElement("li")
+      const hdDiv = document.createElement("div")
+      hdDiv.className = "hd"
+      hdDiv.innerText = `${item.name}的基本信息`
+      oLi.appendChild(hdDiv)
+
+      const bdDiv = document.createElement("div")
+      bdDiv.className = "bd"
+      const p1 = document.createElement("p")
+      const p2 = document.createElement("p")
+      const p3 = document.createElement("p")
+      p1.innerText = `姓名：${item.name}`
+      p2.innerText = `年龄：${item.age}`
+      p3.innerText = `性别：${item.sex}`
+
+      bdDiv.appendChild(p1)
+      bdDiv.appendChild(p2)
+      bdDiv.appendChild(p3)
+      oLi.appendChild(bdDiv)
+      list.appendChild(oLi)
+    })
+  </script>
+</body>
+</html>
