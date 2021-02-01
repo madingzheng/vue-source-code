@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -7,7 +7,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-　module: {
+  module: {
     rules: [
       {
         test: /\.tsx?$/,
@@ -16,7 +16,7 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-　　},
+  },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: false,
@@ -27,3 +27,4 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js']
   }
 }
+;
