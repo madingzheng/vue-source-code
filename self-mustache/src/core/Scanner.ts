@@ -7,9 +7,9 @@ export default class Scanner implements ScannerInterface {
   tail: string //尾巴字符串
 
   constructor(templateStr: string) {
-    this.templateStr = templateStr
-    this.pos = 0
-    this.tail = templateStr
+    this.templateStr = templateStr;
+    this.pos = 0;
+    this.tail = templateStr;
   }
   
   /**
@@ -18,8 +18,8 @@ export default class Scanner implements ScannerInterface {
    */
   scan(tag: string) {
     if (this.tail.indexOf(tag) === 0) {
-      this.pos += tag.length
-      this.tail = this.templateStr.substring(this.pos)
+      this.pos += tag.length;
+      this.tail = this.templateStr.substring(this.pos);
     }
   }
 
@@ -28,15 +28,15 @@ export default class Scanner implements ScannerInterface {
    * @param stopTag 标签
    */
   scanUntil(stopTag: string) {
-    const pso_backup = this.pos
+    const pso_backup = this.pos;
     while (this.tail.indexOf(stopTag) !== 0 && !this.eos()) {
-      this.pos ++
-      this.tail = this.templateStr.substring(this.pos)
+      this.pos ++;
+      this.tail = this.templateStr.substring(this.pos);
     }
-    return this.templateStr.substring(pso_backup, this.pos)
+    return this.templateStr.substring(pso_backup, this.pos);
   }
 
   eos() {
-    return this.pos >= this.templateStr.length
+    return this.pos >= this.templateStr.length;
   }
 }

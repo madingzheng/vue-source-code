@@ -1,12 +1,12 @@
-import { mustacheInterface } from './types/index'
-import parseTemplateToTokens from './core/parseTemplateToTokens'
+import { mustacheInterface } from './types/index';
+import parseTemplateToTokens from './core/parseTemplateToTokens';
 
 const mustache:mustacheInterface = {
   render(templateStr:string) {
-    const tokens = parseTemplateToTokens(templateStr, '{{', '}}')
+    const tokens = parseTemplateToTokens(templateStr, '{{', '}}');
     console.log(tokens);
   }
-}
+};
 
 //使用
 let templateStr = `
@@ -24,6 +24,6 @@ let templateStr = `
     </li>
     {{ /arr}}
 </ul>
-`
+`;
 
-mustache.render(templateStr)
+mustache.render(templateStr);
