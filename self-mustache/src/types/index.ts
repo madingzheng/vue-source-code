@@ -14,3 +14,4 @@ export interface ScannerInterface {
 export interface DataInterface {
   [propName: string]: any
 }
+
