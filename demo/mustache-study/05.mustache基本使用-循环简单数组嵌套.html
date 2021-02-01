@@ -13,7 +13,7 @@
   <script>
     const template = `
       <ul>
-          {{ #arr }}
+          {{ #students }}
           <li>
             {{ name }}的爱好是
             <ol>
@@ -24,11 +24,11 @@
               {{ /hobbies }}
             </ol>
           </li>
-          {{ /arr}}
+          {{ /students}}
       </ul>
     `
     const data = {
-      arr: [
+      students: [
         {name: '小明', age: 12, hobbies: ['游泳', '羽毛球']},
         {name: '小红', age: 12, hobbies: ['游泳', '羽毛球','写作业']},
         {name: '小强', age: 12, hobbies: ['打台球']}

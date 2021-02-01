@@ -1,4 +1,6 @@
 import Scanner from './Scanner';
+import nestTokens from './nestTokens';
+
 export default function parseTemplateToTokens(
   templateStr: string,
   firstTag: string,
@@ -24,5 +26,5 @@ export default function parseTemplateToTokens(
     }
     scanner.scan(lastTag);
   }
-  return tokens;
+  return nestTokens(tokens);
 }
