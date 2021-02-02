@@ -23,7 +23,7 @@ const vnode = h('div#container.two.classes', { on: { click: function(){} } }, [
 // Patch into empty DOM element – this modifies the DOM as a side effect
 patch(container, vnode);
 
-var newVnode = h(
+const newVnode = h(
   'div#container.two.classes',
   { on: { click: function(){} } },
   [
