@@ -2,8 +2,8 @@ import vnode from './vnode';
 
 /**
  * 低配版h函数。模仿snabbdom，三个参数必传
- * @param {string} sel
- * @param {VNodeData} data
+ * @param {string} sel DOM结构
+ * @param {VNodeData} data 节点属性
  * @param {*} c
  * - h('div', {}, '文字')
  * - h('div', {}, [])

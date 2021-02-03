@@ -1,16 +1,8 @@
+// 测试h函数和vnode函数
 import h from './core/h';
+import patch from './core/patch';
 
-// const vnode = h('div', {}, '苹果');
-
-const vnode = h('div', {}, [
-  h('div', {}, '苹果'),
-  h('div', {}, '香蕉'),
-  h('div', {}, [
-    h('span', {class: 'mySpan'}, 'span1'),
-    h('span', {class: 'mySpan'}, 'span2')
-  ])
-]);
-
-// const vnode = h('div', {}, h('span', {}, 'mySpan'));
-console.log(vnode);
-
+// const vnode = h('h1', {key: 'hello'}, h('div', {}, 'dadasd'));
+const vnode = h('h1', {key: 'hello'}, [h('div', {}, 'dadasd')]);
+const app = document.getElementById('app');
+patch(app, vnode);
