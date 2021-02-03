@@ -1,12 +1,16 @@
-export default function (vnode, pivot) {
-  console.log('vnode', vnode);
+export default function createElement(vnode) {
   const domNode = document.createElement(vnode.sel);
   if (vnode.text && !vnode.children) {
     // 内部是string | number
     domNode.innerText = vnode.text;
-    pivot.parentNode.insertBefore(domNode, pivot);
   } else if (Array.isArray(vnode.children) && vnode.children.length) {
     // 内部是 Array []
-    console.log('内部是数组');
+    for (let i = 0; i < vnode.children.length; i++) {
+      const ch = vnode.children[i];
+      const chDOM = createElement(ch);
+      domNode.appendChild(chDOM);
+    }
   }
+  vnode.elm = domNode;
+  return vnode.elm;
 }
