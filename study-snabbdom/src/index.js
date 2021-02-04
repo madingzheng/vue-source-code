@@ -2,13 +2,20 @@
 import h from './core/h';
 import patch from './core/patch';
 
-const vnode = h('h1', { key: 'hello' }, 'hello world');
+const vnode = h('ul', {}, [
+  h('li', {key: 'A'}, 'A'),
+  h('li', {key: 'B'}, 'B'),
+  h('li', {key: 'C'}, 'C'),
+  h('li', {key: 'D'}, 'D')
+]);
 
 const vnode2 = h('ul', {}, [
-  h('li', {}, 'A'),
-  h('li', {}, 'B'),
-  h('li', {}, 'C'),
-  h('li', {}, [h('span', {}, '我是span')])
+  h('li', {key: 'A'}, 'A'),
+  h('li', {key: 'B'}, 'B'),
+  h('li', {key: 'M'}, 'M'),
+  h('li', {key: 'N'}, 'N'),
+  h('li', {key: 'C'}, 'C'),
+  h('li', {key: 'D'}, 'D')
 ]);
 
 const app = document.getElementById('app');

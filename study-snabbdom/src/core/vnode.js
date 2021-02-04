@@ -7,7 +7,13 @@
  * @param {String} elm DOM结构
  */
 export default function (sel, data, children, text, elm) {
+  const key = data && data.key;
   return {
-    sel, data, children, text, elm
+    sel,
+    data,
+    children,
+    text,
+    elm,
+    key
   };
 }
