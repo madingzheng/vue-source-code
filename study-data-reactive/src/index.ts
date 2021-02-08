@@ -7,17 +7,11 @@ const obj:MyObj = {
       d: 12
     }
   },
-  b: 5
-};
-
-
-obj.f = {
-  g: {
-    z: 33
-  }
+  b: 5,
+  e: [1,2,3]
 };
 
 observe(obj);
 
-
+obj.e.push(123);
 console.log(obj);
