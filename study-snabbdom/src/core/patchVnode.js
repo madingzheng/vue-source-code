@@ -1,5 +1,4 @@
-import createChildrenElement from './createChildrenElement';
-import createElement from './createElement';
+import updateChildren from './updateChildren';
 export default function patchVnode(newVnode, oldVnode) {
   if (newVnode.text) {
     // 新节点为text
@@ -8,11 +7,16 @@ export default function patchVnode(newVnode, oldVnode) {
     }
   } else {
     if (oldVnode.text) {
-      // 老节点为text
+      // 老节点为text，新节点为children，直接创建children
       oldVnode.elm.innerText = '';
-      createChildrenElement(newVnode.children, oldVnode.elm);
+
+      for (let i = 0; i < children.length; i++) {
+        const ch = children[i];
+        const chDOM = createElement(ch);
+        point.appendChild(chDOM);
+      }
     } else {
-      // 最复杂的情况，新老节点都为children
+      updateChildren(oldVnode.elm, oldVnode.children, newVnode.children);
     }
   }
 }

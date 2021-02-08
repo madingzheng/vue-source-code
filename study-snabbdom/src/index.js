@@ -9,13 +9,12 @@ const vnode = h('ul', {}, [
   h('li', {key: 'D'}, 'D')
 ]);
 
-const vnode2 = h('ul', {}, [
+const vnode2 = h('ol', {}, [
   h('li', {key: 'A'}, 'A'),
   h('li', {key: 'B'}, 'B'),
-  h('li', {key: 'M'}, 'M'),
-  h('li', {key: 'N'}, 'N'),
   h('li', {key: 'C'}, 'C'),
-  h('li', {key: 'D'}, 'D')
+  h('li', {key: 'D'}, 'D'),
+  h('li', {key: 'Q'}, 'Q')
 ]);
 
 const app = document.getElementById('app');

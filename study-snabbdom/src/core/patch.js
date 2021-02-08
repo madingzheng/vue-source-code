@@ -1,6 +1,7 @@
 import createElement from './createElement';
 import vnode from './vnode';
 import patchVnode from './patchVnode';
+import { sameVnode } from './util';
 
 /**
  * 上树操纵
@@ -18,11 +19,7 @@ export default function patch(oldVnode, newVnode) {
     );
   }
 
-  if (
-    (oldVnode.data && oldVnode.key) ===
-      (newVnode.data && newVnode.key) &&
-    oldVnode.sel === newVnode.sel
-  ) {
+  if (sameVnode(newVnode, oldVnode)) {
     patchVnode(newVnode, oldVnode);
   } else {
     let parentNode = oldVnode.elm.parentNode;
@@ -30,5 +27,6 @@ export default function patch(oldVnode, newVnode) {
     if (parentNode && newVnodeEle) {
       parentNode.insertBefore(newVnodeEle, oldVnode.elm);
       parentNode.removeChild(oldVnode.elm);
-    }  }
+    }
+  }
 }
