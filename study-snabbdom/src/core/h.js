@@ -10,7 +10,7 @@ import vnode from './vnode';
  * - h('div', {}, [])
  * - h('div', {}, h())
  */
-export default function (sel, data, c) {
+export default function h(sel, data, c) {
   if (arguments.length !== 3) {
     throw Error('h函数必须传入3个参数');
   }
