@@ -1,7 +1,6 @@
 var uid = 0;
 export default class Dep {
     constructor() {
-        console.log('我是DEP类的构造器');
         this.id = uid++;
 
         // 用数组存储自己的订阅者。subs是英语subscribes订阅者的意思。
@@ -21,7 +20,6 @@ export default class Dep {
     }
     // 通知更新
     notify() {
-        console.log('我是notify');
         // 浅克隆一份
         const subs = this.subs.slice();
         // 遍历

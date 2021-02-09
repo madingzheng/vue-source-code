@@ -3,7 +3,6 @@ import Dep from "./Dep";
 var uid = 0;
 export default class Watcher {
     constructor(target, expression, callback) {
-        console.log('我是Watcher类的构造器');
         this.id = uid++;
         this.target = target;
         this.getter = parsePath(expression);
